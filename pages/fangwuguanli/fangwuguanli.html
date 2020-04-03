@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="房屋管理平台" />
+    <meta name="keywords" content="房屋管理平台" />
+    <title>房屋管理</title>
+    <link rel="stylesheet" type="text/css" href="../../dist/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/body.css" />
+    <script src="../../dist/layui.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/jquery-2.2.3.js"></script>
+    <script src="../../js/fangwuguanli.js"></script>
+</head>
+<body>
+<div id='summarys' class="content-wrap">
+    <div class="tableTop layui-form" lay-filter="tableTop">
+            <div class="layui-input-inline">
+                <label class="layui-form-label" style="width: 80px">小区名称：</label>
+                <div class="layui-input-block" style="width: 150px;">
+                    <input type="text" name="houseName" id="houseName" lay-verify="" placeholder="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-input-inline" >
+                <label class="layui-form-label" style="width: 80px;">交易状态：</label>
+                <div class="layui-input-block" style="width: 150px;">
+                    <select  id="checkInOrNot" name="checkInOrNot" lay-verify="" lay-filter="type"  class="layui-input">
+                        <option value="">全部</option>
+                        <option value="0">未出租/出售</option>
+                        <option value="1">已出租/出售</option>
+                    </select>
+                </div>
+            </div>
+
+        <div class="layui-input-inline" >
+            <label class="layui-form-label" style="width: 80px;">房屋类型：</label>
+            <div class="layui-input-block" style="width: 150px;">
+                <select  id="type" name="type" lay-verify="" lay-filter="type"  class="layui-input">
+                    <option value="">全部</option>
+                    <option value="0">新房</option>
+                    <option value="1">二手房</option>
+                    <option value="2">租房</option>
+                    <option value="3">商铺</option>
+                    <option value="4">写字楼</option>
+                    <option value="5">厂房仓库</option>
+                </select>
+            </div>
+        </div>
+        <!--<div style="height: 20px;"></div>-->
+        <!--<div class="layui-input-inline">-->
+            <!--<label class="layui-form-label" style="width: 80px">面积：</label>-->
+            <!--<div class="layui-input-block" style="width: 150px;">-->
+                <!--<input  id="minSquare" autocomplete="off" placeholder="最小面积 单位：平方" class="layui-input"/><li style="width: 9%;margin-left:10px;">至</li><input id="maxSquare" placeholder="最大面积 单位：平方" autocomplete="off" class="layui-input"/>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-input-inline">-->
+            <!--<label class="layui-form-label" style="width: 80px">售价：</label>-->
+            <!--<div class="layui-input-block" style="width: 150px;">-->
+                <!--<input  id="minMoney" autocomplete="off" placeholder="最低售价 单位：万元" class="layui-input"/><li style="width: 9%;margin-left:10px;">至</li><input id="maxMoney" placeholder="最高售价 单位：万元" autocomplete="off" class="layui-input"/>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="layui-form-item" style="margin-bottom:60px;">
+            <button style="position: absolute;top: 15px;right: 20%;" id="search" class="layui-btn" lay-submit lay-filter="tableTop">查找</button>
+            <button style="position: absolute;top: 15px;right: 5%;" id="add" class="layui-btn" lay-submit lay-filter="tableTop">添加</button>
+        </div>
+        <table class="tableContent countTableContent layui-table">
+            <thead>
+            <tr>
+                <th>小区名称</th>
+                <th>房屋标题</th>
+                <th>户型</th>
+                <th>面积(㎡)</th>
+                <th>房屋类型</th>
+                <th>价格</th>
+                <th>交易类型</th>
+                <th>交易状态</th>
+                <th>发布时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div id="page" style="margin-left: 29%">
+        </div>
+    </div>
+</div>
+</body>
+</html>

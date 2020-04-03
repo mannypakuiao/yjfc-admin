@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="房屋销售管理" />
+    <meta name="keywords" content="房屋销售管理" />
+    <title>添加房屋</title>
+    <link rel="stylesheet" type="text/css" href="../../dist/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <script src="../../dist/layui.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/jquery-2.2.3.js"></script>
+    <script src="../../js/jquery.form.min.js"></script>
+    <script src="../../js/xiaoquguanliAdd.js"></script>
+    <style>
+        .layui-input{
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<form method="post" >
+    <div style="padding: 15px;">
+        <div class="layui-input-inline" style="display: none">
+            <label class="layui-form-label">ID：</label>
+            <div class="layui-input-block" style="width: 400px;">
+                <input type="text" name="id" id="id" lay-verify=""   autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <!--<div class="layui-inline">-->
+            <!--<label class="layui-form-label" style="width: 70px;">地区：</label>-->
+            <!--<div class="layui-input-block">-->
+                <!--<select name="province" id="province"  class="layui-input"   style="width: 150px">-->
+                    <!--<option value="0" >请选择城市</option>-->
+                <!--</select>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-inline">-->
+            <!--<select name="city" id="city" class="layui-input" style="width: 150px">-->
+                <!--<option value="0">请选择县/区</option>-->
+            <!--</select>-->
+        <!--</div>-->
+
+        <div style="height: 10px;"></div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">小区名称：</label>
+            <div class="layui-input-block">
+                <input type="text" name="houseName" lay-verify=" " id="houseName" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label" style="width: 70px;">房屋经度：</label>-->
+            <!--<div class="layui-input-block">-->
+                <!--<input type="text" name="lon" lay-verify=" " id="lon" autocomplete="off" class="layui-input">-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label" style="width: 70px;">房屋纬度：</label>-->
+            <!--<div class="layui-input-block">-->
+                <!--<input type="text" name="lat" lay-verify=" " id="lat" autocomplete="off" class="layui-input">-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div style="height: 20px;"></div>
+        <input type="submit" style="margin: 20px 140px;width: 80px;display:block;margin:0 auto" value="保存" class="baocun" id="save">
+    </div>
+</form>
+</body>
+
+</html>

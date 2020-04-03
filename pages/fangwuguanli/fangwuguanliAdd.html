@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="房屋销售管理" />
+    <meta name="keywords" content="房屋销售管理" />
+    <title>添加房屋</title>
+    <link rel="stylesheet" type="text/css" href="../../dist/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <script src="../../dist/layui.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/jquery-2.2.3.js"></script>
+    <script src="../../js/jquery.form.min.js"></script>
+    <script src="../../js/fangwuguanliAdd.js"></script>
+    <style>
+        .del{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            margin-left: -24px;
+            cursor: pointer;
+        }
+        .layui-input{
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+<form method="post"  id="regform" enctype="multipart/form-data">
+    <div style="padding: 15px;">
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">发布方式：</label>
+            <div class="layui-input-block">
+                <select  id="releaseType" name="releaseType" lay-verify="" lay-filter="releaseType"  class="layui-input">
+                    <option value="0">平台发布</option>
+                    <option value="1">委托发布</option>
+                </select>
+            </div>
+        </div>
+        <div  id='query' class="layui-input-inline" style="display: none">
+            <label class="layui-form-label" style="width: 70px">委托人：</label>
+            <div  class="layui-input-block" style="width: 355px;display: flex">
+                <input type="text" name="weituo"   id="weituo"   lay-verify=""  placeholder="用户名/手机号" autocomplete="off" class="layui-input">
+                <input id="findRelease" value="查询"  class="layui-btn" style="margin: 20px 140px;width: 80px;display:block;margin:0 auto"/>
+            </div>
+        </div>
+        <div id='release' class="content-wrap" style="padding: 0 20px;display: none">
+            <div class="tableTop layui-form" lay-filter="tableTop">
+                <table class="tableContent countTableContent layui-table" id="releaseTable">
+                    <thead>
+                    <tr>
+                        <th>选择框</th>
+                        <th>用户名</th>
+                        <th>电话</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">房屋类型：</label>
+            <div class="layui-input-block">
+                <select  id="type" name="type" lay-verify="" lay-filter="type"  class="layui-input">
+                    <option value="">请选择</option>
+                    <option value="0">新房</option>
+                    <option value="1">二手房</option>
+                    <option value="2">租房</option>
+                    <option value="3">商铺</option>
+                    <option value="4">写字楼</option>
+                    <option value="5">厂房仓库</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">客户名：</label>
+            <div class="layui-input-block">
+                <input type="text" name="customerName" lay-verify=" "  id="customerName" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">手机号：</label>
+            <div class="layui-input-block">
+                <input type="text" name="phoneNumber" lay-verify=" "  id="phoneNumber" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">单元号：</label>
+            <div class="layui-input-block">
+                <input type="text" name="unitNumber" lay-verify=" "  id="unitNumber" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">交易类型：</label>
+            <div class="layui-input-block">
+                <select  id="mode" name="mode" lay-verify="" lay-filter="mode"  class="layui-input">
+                    <option value="">请选择</option>
+                    <option value="0">出租</option>
+                    <option value="1">出售</option>
+                    <option value="2">整租</option>
+                    <option value="3">合租</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="layui-inline" id="diqu" >
+            <label class="layui-form-label" style="width: 70px;">地区：</label>
+            <div class="layui-input-block">
+                <select name="province" id="province"  class="layui-input"   style="width: 175.5px">
+                    <option value="0" >请选择城市</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-inline" id="chengshi" >
+            <select name="city" id="city" class="layui-input" style="width: 175.5px">
+                <option value="0">请选择县/区</option>
+            </select>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">标题：</label>
+            <div class="layui-input-block">
+                <input type="text" name="title" lay-verify=" " id="title" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item" style="display: none">
+            <label class="layui-form-label" style="width: 70px;">经纪人：</label>
+            <div class="layui-input-block">
+                <input type="text" name="broker" lay-verify=" " id="broker" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-input-inline" style="display: none">
+            <label class="layui-form-label">ID：</label>
+            <div class="layui-input-block" style="width: 400px;">
+                <input type="text" name="id" id="id" lay-verify=""   autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="layui-form-item" id="xiaoqu" style="display: none">
+            <label class="layui-form-label" style="width: 70px;">所属小区：</label>
+            <div class="layui-input-block">
+                <select id="oldHouseId" name="oldHouseId" lay-verify="" lay-filter="oldHouseId"  class="layui-input">
+                </select>
+            </div>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="layui-input-inline">
+            <label class="layui-form-label" style="width: 70px">经纪人：</label>
+            <div  class="layui-input-block" style="width: 355px;display: flex">
+                <input type="text" name="jingjiren"   id="jingjiren" lay-verify=""  placeholder="用户名/手机号" autocomplete="off" class="layui-input">
+                <input id="findUser" value="查询" readonly class="layui-btn" style="margin: 20px 140px;width: 80px;display:block;margin:0 auto"/>
+            </div>
+        </div>
+        <div id='sys' class="content-wrap" style="padding: 0 20px;display: none">
+            <div class="tableTop layui-form" lay-filter="tableTop">
+                <table class="tableContent countTableContent layui-table" id="userTable">
+                    <thead>
+                    <tr>
+                        <th>选择框</th>
+                        <th>用户名</th>
+                        <th>电话</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="layui-form-item" id="huxing" style="display: none">
+            <label class="layui-form-label" style="width: 70px;">户型：</label>
+            <div class="layui-input-block">
+                <input type="text" name="layout" lay-verify=" " id="layout"  placeholder="例：三室两厅" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">面积：</label>
+            <div class="layui-input-block">
+                <input type="text" name="housingArea" lay-verify=" " placeholder=" 单位（平方）例：120" id="housingArea" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">售价：</label>
+            <div class="layui-input-block">
+                <input type="text" name="money" lay-verify=" " placeholder=" 单位（万元）例：50万,出租时为50/月 单位（元）"  id="money" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item" id="divprice">
+            <label class="layui-form-label" style="width: 70px;">单价：</label>
+            <div class="layui-input-block">
+                <input type="text" name="price" lay-verify=" " placeholder=" 单位（平米）例：8000"  id="price" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">朝向：</label>
+            <div class="layui-input-block">
+                <input type="text" name="orientation" lay-verify=" " id="orientation" placeholder="例：南" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">楼层：</label>
+            <div class="layui-input-block">
+                <input type="text" name="louceng" lay-verify=" " id="louceng" placeholder="例：中楼层/10" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">电梯：</label>
+            <div class="layui-input-block">
+                <input type="text" name="dianti" lay-verify=" " id="dianti" placeholder="例：有电梯" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">装修：</label>
+            <div class="layui-input-block">
+                <input type="text" name="zhaungxiu" lay-verify=" " id="zhaungxiu" placeholder="例：精装修" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">年代：</label>
+            <div class="layui-input-block">
+                <input type="text" name="niandai" lay-verify=" " id="niandai" placeholder="例：2015" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">是否有房产证：</label>
+            <div class="layui-input-block">
+                <input type="text" name="fangchan" lay-verify=" " id="fangchan" placeholder="例：有" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">房产证号：</label>
+            <div class="layui-input-block">
+                <input type="text" name="fanghao" lay-verify=" " id="fanghao" placeholder="例：123456" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">产权年限：</label>
+            <div class="layui-input-block">
+                <input type="text" name="nianxian" lay-verify=" " id="nianxian" placeholder="例：70年" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">是否唯一住房：</label>
+            <div class="layui-input-block">
+                <input type="text" name="weiyi" lay-verify=" " id="weiyi" placeholder="例：是" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">房屋经度：</label>
+            <div class="layui-input-block">
+                <input type="text" name="lon" lay-verify=" " id="lon" autocomplete="off" placeholder="例：114.318503" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">房屋纬度：</label>
+            <div class="layui-input-block">
+                <input type="text" name="lat" lay-verify=" " id="lat" placeholder="例：34.802941" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="layui-input-inline">
+            <label class="layui-form-label" style="width: 70px;">房屋简介：</label>
+            <div class="layui-input-block" style="width: 240px;">
+                <textarea id="content" name="content" class="layui-text" style="width: 353px;height: 100px"></textarea>
+            </div>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="layui-input-inline">
+            <label class="layui-form-label" style="width: 70px;">主照片：</label>
+            <div class="layui-input-block" style="width: 400px;">
+                <input type="file" name="fileImg"/>
+                <br>
+                <span class="help-block">建议大小 120 X 120 像素</span>
+            </div>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="layui-input-inline" id="photo">
+            <label class="layui-form-label" style="width: 70px;">主照片：</label>
+            <div id="mainImg" class="layui-input-block" style="width: 400px;">
+            </div>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="layui-input-inline">
+            <label class="layui-form-label" style="width: 70px;">房屋图片：</label>
+            <div class="layui-input-block" style="width: 400px;">
+                <input type="file" name="file" multiple="multiple"/>
+                <br>
+                <span class="help-block">建议大小 500 X 350 像素</span>
+            </div>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="layui-input-inline" id="photos">
+            <label class="layui-form-label" style="width: 70px;">房屋图片：</label>
+            <div id="imgs" class="layui-input-block" style="width: 400px;">
+            </div>
+        </div>
+        <div style="height: 10px;"></div>
+        <input type="hidden" name="imgUrl" id="imgUrl" >
+        <input type="hidden" name="userId" id="userId" >
+        <input type="hidden" name="ids" id="ids" >
+        <input type="hidden" name="houseId" id="houseId" >
+        <input type="hidden" name="houseName" id="houseName" >
+        <input type="hidden" name="areaCode" id="areaCode" >
+        <input type="hidden" name="cityCode" id="cityCode" >
+        <input type="submit" style="margin: 20px 140px;width: 80px;display:block;margin:0 auto" value="保存" class="baocun" id="save">
+    </div>
+</form>
+</body>
+
+</html>

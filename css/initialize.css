@@ -1,0 +1,231 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: verdana, helvetica, arial, sans-serif;
+	list-style: none;
+	text-decoration: none;
+	font-size: 14px;
+	color: #333;
+}
+
+.clearFix {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.detail-body {
+	border-bottom: 1px solid #eaeaea;
+}
+
+.top {
+	width: 1200px;
+	margin: 20px auto 0;
+}
+
+.main {
+	width: 1200px;
+	border: 1px solid #ddd;
+	margin: 30px auto 0;
+}
+
+.main-heading {
+	padding: 10px 20px;
+	background-color: #f5f5f5;
+	border-bottom: 1px solid #ddd;
+	border-top-left-radius: 1px;
+	border-top-right-radius: 1px;
+}
+
+#hotelList {
+	width: 150px;
+	height: 34px;
+}
+
+.main-body-item:first-child {
+	border: 0;
+}
+
+.main-body-item {
+	border-top: 1px solid #ddd;
+}
+
+.items {
+	position: relative;
+	padding: 20px;
+	height: 40px;
+	line-height: 40px;
+	box-sizing: content-box;
+	border-bottom: 1px solid #ddd;
+}
+
+.items h4 {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.opt {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+.opt .btn-primary {
+	width: 104px;
+	padding: 9px 13px;
+}
+
+.opt .btn-link {
+	width: 60px;
+	height: 40px;
+	text-decoration: none;
+}
+
+.modal-header {
+	height: 20px;
+	background-color: #f7f7f7;
+	box-sizing: content-box;
+}
+
+.modal-title {
+	font-weight: bold;
+}
+
+.myTable {
+	margin: 0 auto;
+	border: 1px solid #eaeaea;
+}
+
+.myTable tr:first-child {
+	border: none;
+}
+
+.myTable tr {
+	border-top: 1px solid #eaeaea;
+}
+
+.myTable th {
+	background-color: #fafafa;
+	border-right: 1px solid #eaeaea;
+	width: 96px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.myTable td {
+	text-align: left;
+	padding: 10px 20px;
+}
+
+.myTable-sell {
+	padding: 10px 0 20px 0;
+}
+
+.myTable-sell label {
+	font-weight: normal;
+}
+
+.myTable-sell label:nth-child(4) {
+	color: #999;
+}
+
+.myTable-sell p {
+	font-size: 12px;
+	margin-left: 15px;
+}
+
+.myTable-price {
+	padding-top: 8px;
+}
+
+.myTable-price label {
+	padding-top: 8px;
+	font-weight: normal;
+}
+
+.myTable-price label:nth-child(3) {
+	color: #999;
+}
+
+.myTable-price input {
+	width: 120px;
+	height: 40px;
+	display: inline-block;
+	font-size: 16px;
+	font-family: 'Microsoft YaHei';
+	padding: 6px 11px;
+	color: #3DC6B6;
+	box-sizing: border-box;
+	border: 1px solid #eaeaea;
+}
+
+.myTable-price input::-moz-placeholder {
+	color: #999;
+}
+
+.myTable-price input::-webkit-input-placeholder {
+	color: #999;
+}
+
+.myTable-price input:-ms-input-placeholder {
+	color: #999;
+}
+
+.btn-default {
+	width: 98px;
+	height: 46px;
+	font-size: 18px;
+	opacity: 0.65;
+}
+
+.detail-top {
+	margin: 0 20px 20px;
+	font-size: 12px;
+	background-color: #fafafa;
+	padding: 11px 20px;
+}
+
+.detail-body table {
+	width: 100%;
+}
+
+.detail-body table tr:first-child {
+	background-color: #fafafa;
+	height: 50px;
+	border-top: 1px solid #eaeaea;
+}
+
+.detail-body table tr th {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.detail-body td {
+	border-top: 1px solid #eaeaea;
+	border-right: 1px solid #eaeaea;
+}
+
+.table-cell {
+	height: 117px;
+	box-sizing: border-box;
+	padding: 15px;
+}
+
+.table-cell span {
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 14px;
+	display: block;
+}
+
+.table-cell span:nth-child(2) {
+	color: #30bcb0;
+}
+
+.table-cell span:nth-child(3) {
+	color: #ff9d3c;
+}
+
+.layui-layer-content {
+	color: #fff;
+}

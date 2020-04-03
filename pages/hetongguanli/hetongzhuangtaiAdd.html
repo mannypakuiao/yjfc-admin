@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="房屋销售管理" />
+    <meta name="keywords" content="房屋销售管理" />
+    <title>添加房屋状态</title>
+    <link rel="stylesheet" type="text/css" href="../../dist/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <script src="../../dist/layui.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/jquery-2.2.3.js"></script>
+    <script src="../../js/jquery.form.min.js"></script>
+    <script src="../../js/hetongzhuangtai.js"></script>
+</head>
+
+<body>
+<form method="post">
+    <div style="padding: 15px;">
+        <div class="layui-input-inline" style="display: none">
+            <label class="layui-form-label">ID：</label>
+            <div class="layui-input-block" style="width: 400px;">
+                <input type="text" name="id" id="id" lay-verify=""   autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-input-inline" style="display: none">
+            <label class="layui-form-label">ID：</label>
+            <div class="layui-input-block" style="width: 400px;">
+                <input type="text" name="contractId" id="contractId" lay-verify=""   autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">处理时间：</label>
+            <div class="layui-input-block">
+                <input type="text" name="updateTime" lay-verify=" " id="updateTime" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">合同状态：</label>
+            <div class="layui-input-block">
+                <select  id="state" name="state" lay-verify="" lay-filter="type"  class="layui-input">
+                    <option value="">请选择</option>
+                    <option value="0">验房中</option>
+                    <option value="1">订房中</option>
+                    <option value="2">已定房</option>
+                    <option value="3">过户中</option>
+                    <option value="4">已过户</option>
+                    <option value="5">已完成</option>
+                </select>
+            </div>
+        </div>
+        <div style="height: 10px;"></div>
+        <input type="submit" style="margin: 20px 140px;width: 80px;display:block;margin:0 auto" value="保存" class="baocun" id="save">
+    </div>
+</form>
+</body>
+
+</html>

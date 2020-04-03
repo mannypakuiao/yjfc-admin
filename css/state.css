@@ -1,0 +1,226 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: verdana, helvetica, arial, sans-serif;
+	list-style: none;
+	text-decoration: none;
+	font-size: 14px;
+	color: #333;
+}
+
+label {
+	font-weight: normal;
+}
+
+.clearFix {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.main {
+	width: 1200px;
+	border: 1px solid #ddd;
+	margin: 30px auto 0;
+}
+
+.heading {
+	height: 80px;
+	padding: 20px;
+}
+
+.seven {
+	position: absolute;
+	left: 250px;
+	top: 0;
+}
+
+.search .before {
+	display: table-cell;
+	height: 34px;
+	padding: 0 5px;
+	border: 1px solid #eaeaea;
+	vertical-align: middle;
+	cursor: not-allowed;
+	color: #666;
+}
+
+.search .center {
+	display: table-cell;
+	width: 100px;
+	height: 34px;
+	padding: 0 5px;
+	border: 1px solid #eaeaea;
+	vertical-align: middle;
+}
+
+.search .after {
+	display: table-cell;
+	height: 34px;
+	padding: 0 5px;
+	border: 1px solid #eaeaea;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.search {
+	position: relative;
+}
+
+#select {
+	width: 240px;
+	height: 40px;
+}
+
+.heading-left {
+	width: 800px;
+	float: left;
+}
+
+.heading-right {
+	float: right;
+}
+
+.display {
+	width: 100%;
+	color: #666;
+}
+
+.display th {
+	text-align: center;
+	background-color: #f7f7f7;
+	padding: 11px 8px;
+	font-weight: normal;
+	color: #666;
+	border-top: 1px solid #eaeaea;
+	border-right: 1px solid #eaeaea;
+}
+
+.display th:first-child {
+	width: 450px;
+	border-top: 1px solid #eaeaea;
+	border-right: 1px solid #eaeaea;
+	text-align: left;
+	padding-left: 20px;
+}
+
+.display .date {
+	height: 20px;
+	display: block;
+	color: #666;
+}
+
+.display .weekend {
+	height: 20px;
+	display: block;
+	color: #666;
+}
+
+.display tr {
+	height: 95px;
+}
+
+.display tr td {
+	color: #666;
+	border-top: 1px solid #eaeaea;
+	border-right: 1px solid #eaeaea;
+	text-align: center;
+}
+
+.display tr td:first-child {
+	width: 450px;
+	padding: 18px 4px 18px 20px;
+	position: relative;
+	border-top: 1px solid #eaeaea;
+	border-right: 1px solid #eaeaea;
+	text-align: left;
+}
+
+.display tr td:first-child:hover {
+	cursor: pointer;
+	color: #337ab7;
+}
+
+.down {
+	position: absolute;
+	top: 40px;
+	right: 10px;
+	color: #666;
+}
+
+.table-cell span {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.table-cell span i {
+	cursor: pointer;
+}
+
+.display .add {
+	height: 57px;
+}
+
+.modal-header h5 {
+	font-weight: bold;
+}
+
+.myForm div {
+	text-align: center;
+	width: 100px;
+	font-weight: normal;
+	color: #337ab7;
+	padding: 7px 15px 11px;
+	border-top: 4px solid #337ab7;
+	border-right: 1px solid #eaeaea;
+	border-left: 1px solid #eaeaea;
+}
+
+.selectBox li {
+	padding: 11px 20px;
+	border-bottom: 1px solid #eaeaea;
+	border-right: 1px solid #eaeaea;
+	border-left: 1px solid #eaeaea;
+}
+
+.selectBox li:first-child {
+	border-top: 1px solid #eaeaea;
+}
+
+.selectBox label {
+	color: #666;
+	font-weight: normal;
+}
+
+.selectBox input {
+	/*outline: 1px solid #337ab7;*/
+}
+
+.operate {
+	margin-top: 20px;
+	color: #666;
+	border: 1px solid #eaeaea;
+	width: 100%;
+}
+
+.operate tr th {
+	color: #666;
+	background-color: #f7f7f7;
+	border-right: 1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+	text-align: center;
+	padding: 12px 20px;
+}
+
+.operate tr td {
+	text-align: center;
+	padding: 12px 20px;
+}
+
+i {
+	font-style: normal;
+}
+
+.layui-layer-content {
+	color: #fff;
+}

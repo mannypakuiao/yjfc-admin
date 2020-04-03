@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="房屋销售管理" />
+    <meta name="keywords" content="房屋销售管理" />
+    <title>添加banner</title>
+    <link rel="stylesheet" type="text/css" href="../../dist/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" href="../../js/assets/design/css/trumbowyg.css">
+    <script src="../../dist/layui.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/jquery-2.2.3.js"></script>
+    <script src="../../js/jquery.form.min.js"></script>
+    <script src="../../js/assets/trumbowyg.js"></script>
+    <script src="../../js/assets/plugins/base64/trumbowyg.base64.js"></script>
+    <script src="../../js/zixunAdd.js"></script>
+</head>
+<body>
+<div style="padding: 15px;" class="addBanner">
+        <div style="height: 10px;"></div>
+        <div class="layui-input-inline">
+            <label class="layui-form-label">标题：</label>
+            <div class="layui-input-block" style="width: 578px;">
+                <input type="text" name="title" id="title" required lay-verify=""   autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="layui-input-inline">
+            <label class="layui-form-label">内容：</label>
+            <div class="layui-input-block" style="width: 600px">
+                <div onmousedown="show_element(event)" style="clear:both" id="content" class="editor"></div>
+            </div>
+        </div>
+        <input type="text" style="display: none" name="id" id="id">
+        <div style="height: 20px;"></div>
+    <button style="margin: 20px 340px;width: 80px;" id="save" class="baocun">保存</button>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="dist/css/layui.css" />
+	<script src="dist/layui.js"></script>
+	<script src="js/jquery-2.2.3.js"></script>
+	<script src="js/common.js"></script>
+	<style>
+		#LAY_app,
+		body,
+		html {
+			height: 100%
+		}
+
+		.login-main {
+			width: 375px;
+			margin: 120px auto;
+			box-sizing: border-box
+		}
+
+		.login-box {
+			padding: 20px
+		}
+
+		.login-header {
+			text-align: center
+		}
+
+		.login-header h2 {
+			margin-bottom: 10px;
+			font-weight: 300;
+			font-size: 30px;
+			color: #000
+		}
+
+		.login-body .layui-form-item {
+			position: relative
+		}
+
+		.login-icon {
+			position: absolute;
+			left: 1px;
+			top: 1px;
+			width: 38px;
+			line-height: 36px;
+			text-align: center;
+			color: #d2d2d2
+		}
+
+		.login-body .layui-form-item .layui-input {
+			padding-left: 38px
+		}
+
+		.jump-change {
+			float: right
+		}
+
+		@media screen and (max-width:768px) {
+			.login {
+				padding-top: 60px
+			}
+			.login-main {
+				width: 300px
+			}
+			.login-box {
+				padding: 10px
+			}
+		}
+	</style>
+</head>
+
+<body>
+<div class="login-main">
+	<div class="login-box login-header">
+		<h2>优居房产后台登录</h2>
+	</div>
+	<div class="login-box login-body layui-form">
+		<div class="layui-form-item">
+			<label class="login-icon layui-icon layui-icon-username" for="login-username">&#xe770;</label>
+			<input type="text" name="userName" id="login-username" lay-verify="required" placeholder="用户名" class="layui-input">
+		</div>
+		<div class="layui-form-item">
+			<label class="login-icon layui-icon layui-icon-password" for="login-password">&#xe672;</label>
+			<input type="password" name="password" id="login-password" lay-verify="required" placeholder="密码" class="layui-input">
+		</div>
+		<!--<div class="layui-form-item" style="margin-bottom: 20px;">-->
+			<!--<input type="checkbox" name="remember" lay-skin="primary" title="记住密码" style="display: none">-->
+			<!--<a href="javascript:;" class="jump-change layadmin-link" style="margin-top: 7px;" style="display: none">忘记密码？</a>-->
+		<!--</div>-->
+		<div class="layui-form-item" style="margin-top: 40px">
+			<button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-login-submit" id='btn' >登 录</button>
+		</div>
+	</div>
+</div>
+</body>
+<script>
+	$(function() {
+		layui.use(['form', 'element', "table"], function() {
+			var form = layui.form;
+			var element = layui.element;
+			var table = layui.table;
+			form.on("submit", function() {
+				$("#btn").attr("disabled", 'disabled');
+				setTimeout(function(){
+					$("#btn").attr("disabled", false);
+				}, 2000);
+				var data = {
+					userName: $("#login-username").val(),
+					password: $("#login-password").val()
+				}
+				$.post({
+					url: url + "/api/admin/userLogin",
+					data: JSON.stringify(data),
+					dataType: "json",
+					contentType: 'application/json;charset=UTF-8',
+					success: function(res) {
+
+						if(res.code == 0) {
+                            sessionStorage.setItem("name",res.data.userName)
+                            sessionStorage.setItem("userId", res.data.id);
+                            sessionStorage.setItem("authority", res.data.authority);
+							window.location = "index.html";
+						} else {
+							layer.msg(res.msg, {
+								time: 1000
+							});
+						}
+					}
+				})
+			});
+		});
+	});
+</script>
+
+</html>

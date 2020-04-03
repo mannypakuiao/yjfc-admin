@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="房屋销售管理" />
+    <meta name="keywords" content="房屋销售管理" />
+    <title>修改房屋入住状态</title>
+    <link rel="stylesheet" type="text/css" href="../../dist/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <script src="../../dist/layui.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/jquery-2.2.3.js"></script>
+    <script src="../../js/jquery.form.min.js"></script>
+    <script src="../../js/checkInAdd.js"></script>
+</head>
+
+<body>
+<form method="post">
+    <div style="padding: 15px;">
+        <div class="layui-input-inline" style="display: none">
+            <label class="layui-form-label">ID：</label>
+            <div class="layui-input-block" style="width: 400px;">
+                <input type="text" name="id" id="id" lay-verify=""   autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">是否入住：</label>
+            <div class="layui-input-block">
+                <select  id="checkInOrNot" name="checkInOrNot" lay-verify="" lay-filter="checkInOrNot"  class="layui-input">
+                    <option value="0">未入住</option>
+                    <option value="1">已入住</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label" style="width: 70px;">入住时间：</label>
+            <div class="layui-input-block">
+                <input type="text" name="checkInTime" lay-verify=" " id="checkInTime" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width: 70px;">成交金额：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="dealMoney" lay-verify=" " id="dealMoney" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width: 70px;">客户姓名：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="userName" lay-verify=" " id="userName" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label" style="width: 70px;">联系方式：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="userPhone" lay-verify=" " id="userPhone" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        <div style="height: 10px;"></div>
+        <input type="submit" style="margin: 20px 140px;width: 80px;display:block;margin:0 auto" value="保存" class="baocun" id="save">
+    </div>
+</form>
+</body>
+
+</html>

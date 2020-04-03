@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="description" content="房屋销售管理" />
+		<meta name="keywords" content="房屋销售管理" />
+		<title>房屋销售管理</title>
+		<link rel="stylesheet" type="text/css" href="dist/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="css/common.css" />
+		<script src="dist/layui.js"></script>
+		<script src="js/jquery-2.2.3.js"></script>
+		<script src="js/index.js"></script>
+		<script src="js/common.js"></script>
+		<script>
+			$(function(){
+                var name = sessionStorage.getItem("name");
+                $("#exitname").append(name);
+                var authority = sessionStorage.getItem("authority")
+                var authoritys=authority.split(",");
+                for(var i=0;i<authoritys.length;i++){
+                    var authorityid = authoritys[i]
+                    $("#"+authorityid).show();
+                };
+			})
+		</script>
+	</head>
+	<body class="layui-layout-body">
+		<div class="layui-layout layui-layout-admin">
+			<div class="layui-side layui-bg-cyan">
+				<div class="layui-logo">优居房产后台管理</div>
+				<div class="layui-side-scroll">
+					<ul class="layui-nav layui-nav-tree layui-bg-cyan" lay-filter="test">
+						<li class="layui-nav-item" id="001" style="display: none">
+							<a href="javascript:;" style="font-size: 16px;"><img src="images/banner.png" width="20" style="margin-right: 10px;" />轮播图管理</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">轮播图管理<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item" id="002" style="display: none">
+							<a href="javascript:;" style="font-size: 16px;"><img src="images/notice.png" width="20" style="margin-right: 10px;" />公告管理</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">公告管理<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item" id="003" style="display: none">
+							<a href="javascript:;" style="font-size: 16px;"><img src="images/home.png" width="20" style="margin-right: 10px;" />房屋管理</a>
+							<!--<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">分类管理<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>-->
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">小区管理<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">房屋管理<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item" id="006" style="display: none">
+							<a href="javascript:;" style="font-size: 16px;"><img src="images/jingjiren.png" width="20" style="margin-right: 10px;" />经纪人管理</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">经纪人管理<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item" id="004" style="display: none">
+							<a href="javascript:;" style="font-size: 16px;"><img src="images/tongji.png" width="20" style="margin-right: 10px;" />入住统计</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">入住统计<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item" id="007" style="display: none">
+							<a href="javascript:;" style="font-size: 16px;"><img src="images/yonghuguanli.png" width="20" style="margin-right: 10px;" />用户管理</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">用户管理<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item" id="013" style="display: none">
+							<a href="javascript:;" style="font-size: 16px;"><img src="images/zixun.png" width="20" style="margin-right: 10px;" />咨询管理</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">咨询管理<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item" id="009" style="display: none">
+							<a href="javascript:;" style="font-size: 16px;"><img src="images/hetong.png" width="20" style="margin-right: 10px;" />合同管理</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">合同管理<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item" id="008" style="display: none">
+							<a href="javascript:;" style="font-size: 16px;"><img src="images/xuqiu.png" width="20" style="margin-right: 10px;" />意见反馈</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">意见反馈<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+						</li>
+						<!--<li class="layui-nav-item">-->
+							<!--<a href="javascript:;" style="font-size: 16px;"><img src="images/jisuan.png" width="20" style="margin-right: 10px;" />计算公式</a>-->
+							<!--<dl class="layui-nav-child">-->
+								<!--<dd>-->
+									<!--<a class="tabs-a" href="javascript:;">计算公式<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>-->
+								<!--</dd>-->
+							<!--</dl>-->
+						<!--</li>-->
+						<li class="layui-nav-item" id="010" style="display: none">
+							<a href="javascript:;" style="font-size: 16px;"><img src="images/yuyue.png" width="20" style="margin-right: 10px;" />预约登记</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">预约登记<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item" id="011" style="display: none">
+							<a href="javascript:;" style="font-size: 16px;"><img src="images/weituo.png" width="20" style="margin-right: 10px;" />委托出售</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">委托出售<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item" id="012" style="display: none">
+							<a href="javascript:;" style="font-size: 16px;"><img src="images/guanzhu.png" width="20" style="margin-right: 10px;" />房源关注管理</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">房源关注管理<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item" id="005" style="display: none">
+							<a href="javascript:;" style="font-size: 16px;"><img src="images/aboutAs.png" width="20" style="margin-right: 10px;" />关于我们</a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="tabs-a" href="javascript:;">关于我们<i class="layui-icon layui-layout-right" style="margin-right: 10px;">&#xe602;</i></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="https://lbs.qq.com/tool/getpoint/" target="_blank" style="font-size: 16px;"><img src="images/dingwei.png" width="20" style="margin-right: 10px;" />坐标拾取</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="body-top">
+				<p><span id="exitname"></span>，您好！</p>
+				<div id="exit">
+				<img src="images/exit.png"/>
+				<a  id="exitbtn" class="top-exit" href="login.html">退出</a>
+				<a  id="exitbtnn" class="top-password" href="javascript:;">修改密码</a>
+				</div>
+			</div>
+
+			<div class="layui-body">
+				<div class="body-content" style="width: 100%;height: 100%;overflow-y: hidden;">
+
+					<div class="layui-tab" lay-allowClose="true" lay-filter="tabs" style="display: none;">
+						<ul class="layui-tab-title">
+
+						</ul>
+						<div class="layui-tab-content">
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+<!--		<audio id="player" controls src="audio/hint.mp3" style="width:100px;"></audio>-->
+		</div>
+		<script src="js/index.js"></script>
+		<script type="text/javascript">
+			$("#exit").mouseover(function(){
+				$("#exitbtn").show();
+				$("#exitbtnn").show();
+			})
+			$("#exitbtn").mouseover(function(){
+				$(this).show();
+				$("#exitbtnn").show();
+			})
+			$("#exitbtnn").mouseover(function(){
+				$(this).show();
+				$("#exitbtn").show();
+			})
+			$("#exit").mouseout(function(){
+				$("#exitbtn").hide();
+				$("#exitbtnn").hide();
+			})
+			$("#exitbtn").mouseout(function(){
+				$(this).hide();
+				$("#exitbtnn").hide();
+			})
+			$("#exitbtnn").mouseout(function(){
+				$(this).hide();
+				$("#exitbtn").hide();
+			})
+			$("#exitbtn").click(function(){
+				sessionStorage.clear();
+			})
+		</script>
+	</body>
+
+</html>

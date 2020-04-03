@@ -1,0 +1,127 @@
+body {
+	background-color: rgb(245, 245, 245, 0.2);
+}
+
+table th,
+table td {
+	text-align: center !important;
+}
+
+table td.clearFix {
+	text-align: left !important;
+}
+
+.content-wrap {
+	padding: 15px;
+}
+
+.layui-btn {
+	font-size: 14px;
+	height: 38px;
+	line-height: 38px;
+	margin: 0 30px;
+	padding: 0 31px;
+	border-radius: 7px;
+}
+
+h2 {
+	font-size: 20px;
+	padding: 10px 0;
+	color: rgb(30, 159, 255);
+}
+
+.countTableContent th,
+.countTableContent td {
+	text-align: center;
+}
+
+a.record {
+	margin: 0 8px;
+}
+
+a.change{
+	margin: 0 4px;
+}
+
+a.delete,
+a.change,
+a.detail,
+a.record,
+a.continue{
+	color: rgb(0, 102, 255);
+}
+
+a.detail:hover,
+a.record:hover {
+	color: #009688;
+}
+
+a.lookdetail {
+	background-color: #009688;
+	width: 50%;
+	color: #fff;
+	padding: 8px 20px;
+	border-radius: 6px;
+}
+
+td.operate {
+	text-align: center;
+}
+
+p.personState {
+	margin: 0 auto 5px;
+	display: inline-block;
+	/*width: 40%;*/
+	color: #000;
+	background: rgb(252, 138, 5);
+	font-weight: 700;
+	padding: 5px 15px;
+	border-radius: 5px;
+}
+
+body::-webkit-scrollbar {
+	height: 2px;
+	background: rgba(55, 61, 73, 0.3);
+	border-radius: 5px;
+	/*外层轨道*/
+}
+
+body::-webkit-scrollbar-thumb {
+	display: block;
+	margin: 0 auto;
+	border-radius: 5px;
+	background: rgba(37, 40, 49, 0.6);
+	/*内层轨道*/
+}
+
+#last,
+#next {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0 15px;
+	height: 28px;
+	line-height: 28px;
+	margin: 0 -1px 5px 0;
+	background-color: #fff;
+	color: #333;
+	font-size: 12px;
+	border: 1px solid #e2e2e2;
+	cursor: pointer;
+}
+
+#last:hover,
+#next:hover {
+	color: #009688;
+}
+
+#last {
+	border-radius: 2px 0 0 2px;
+}
+
+#next {
+	border-radius: 0 2px 2px 0;
+}
+
+.layui-layer-btn0 {
+	background: #009688 !important;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="description" content="房屋管理平台" />
+    <meta name="keywords" content="房屋管理平台" />
+    <title>关注模块管理</title>
+    <link rel="stylesheet" type="text/css" href="../../dist/css/layui.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/body.css" />
+    <script src="../../dist/layui.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/jquery-2.2.3.js"></script>
+    <script src="../../js/fangyuanguanzhu.js"></script>
+</head>
+<body>
+<div id='summarys' class="content-wrap">
+    <div class="tableTop layui-form" lay-filter="tableTop">
+            <div class="layui-input-inline">
+                <label class="layui-form-label">昵称</label>
+                <div class="layui-input-block" style="width: 150px;">
+                    <input type="text" name="nickName" id="nickName" lay-verify="" placeholder="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-input-inline">
+                <label class="layui-form-label">电话号码</label>
+                <div class="layui-input-block" style="width: 150px;">
+                    <input type="text" name="phone"  id="phone" lay-verify="" placeholder="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+        <div class="layui-form-item" style="margin-bottom:60px;">
+            <button style="position: absolute;top: 15px;right: 20%;" id="search" class="layui-btn" lay-submit lay-filter="tableTop">查找</button>
+        </div>
+        <table class="tableContent countTableContent layui-table">
+            <thead>
+            <tr>
+                <th>小区名称</th>
+                <th>房屋标题</th>
+                <th>关注人昵称</th>
+                <th>关注人电话</th>
+                <th>关注时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <div id="page" style="margin-left: 29%">
+        </div>
+    </div>
+</div>
+</body>
+</html>
